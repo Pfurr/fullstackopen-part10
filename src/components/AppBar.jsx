@@ -6,14 +6,14 @@ import theme from '../themes';
 const styles = StyleSheet.create({
     container : {
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: theme.colors.primary
+        backgroundColor: theme.colors.appBar
     },
     appBarTab: {
         padding: 20,
         fontSize: 16,
         color: "white",
         fontWeight: "bold",
-        backgroundColor: theme.colors.primary
+        backgroundColor: theme.colors.appBar
     }
 });
 
