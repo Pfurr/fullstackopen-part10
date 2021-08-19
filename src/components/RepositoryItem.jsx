@@ -1,13 +1,9 @@
 import React from 'react';
-import { Text, StyleSheet, Image, View} from 'react-native';
+import { StyleSheet, Image, View} from 'react-native';
+import Text from './Text';
 import theme from "../themes";
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize: 16,
-        fontWeight: "bold",
-        padding: 5
-    },
     avatar: {
         width: 66,
         height: 58,
@@ -49,19 +45,11 @@ const processCount = (number) => {
     return `${(number / 1000).toFixed(1)}k`;
 };
 
-const ItemText = ({ children, style }) => {
-    const textStyles = [
-        styles.text,
-        style
-    ];
-    return <Text style={textStyles}>{children}</Text>;
-};
-
 const RepoStat = ({stat, label}) => {
     return (
         <View style={styles.column}>
-            <ItemText style={styles.centered}>{processCount(stat)}</ItemText>
-            <ItemText style={[styles.meta, styles.centered]}>{label}</ItemText>
+            <Text style={styles.centered}>{processCount(stat)}</Text>
+            <Text style={[styles.meta, styles.centered]}>{label}</Text>
         </View>
     );
 };
@@ -75,9 +63,9 @@ const RepositoryItem = ({ item }) => {
                 source={{uri: item.ownerAvatarUrl}}
             />
             <View style={styles.column}>
-                <ItemText>{item.fullName}</ItemText>
-                <ItemText style={styles.meta}>Description: {item.description}</ItemText>
-                <ItemText style={styles.badge}>{item.language}</ItemText>
+                <Text>{item.fullName}</Text>
+                <Text style={styles.meta}>Description: {item.description}</Text>
+                <Text style={styles.badge}>{item.language}</Text>
             </View>
         </View>
         <View style={[styles.row, styles.repoStats]}>
