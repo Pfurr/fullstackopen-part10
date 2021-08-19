@@ -1,17 +1,28 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 16,
+        fontWeight: "bold"
+    }
+});
+
+const ItemText = ({ children }) => {
+    return <Text style={styles.text}>{children}</Text>;
+};
 
 const RepositoryItem = ({ item }) => {
     
     return (
     <>
-        <Text>Full name: {item.fullName}</Text>
-        <Text>Description: {item.description}</Text>
-        <Text>Language: {item.language}</Text>
-        <Text>Stars: {item.stargazersCount}</Text>
-        <Text>Forks: {item.forksCount}</Text>
-        <Text>Reviews: {item.reviewCount}</Text>
-        <Text>Rating: {item.ratingAverage}</Text>
+        <ItemText>Full name: {item.fullName}</ItemText>
+        <ItemText>Description: {item.description}</ItemText>
+        <ItemText>Language: {item.language}</ItemText>
+        <ItemText>Stars: {item.stargazersCount}</ItemText>
+        <ItemText>Forks: {item.forksCount}</ItemText>
+        <ItemText>Reviews: {item.reviewCount}</ItemText>
+        <ItemText>Rating: {item.ratingAverage}</ItemText>
     </>
     );
 };
