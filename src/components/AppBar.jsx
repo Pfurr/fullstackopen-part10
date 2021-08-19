@@ -13,17 +13,17 @@ const styles = StyleSheet.create({
     },
     appBarTab: {
         padding: 20,
-        fontSize: 16,
-        color: "white",
-        fontWeight: "bold",
         backgroundColor: theme.colors.appBar,
+    },
+    whiteText: {
+        color: "white",
     }
 });
 
 const AppBarTab = ({ children, to }) => {
     return (
         <Link style={styles.appBarTab} to={to}>
-            <Text>{children}</Text>
+            <Text style={styles.whiteText}>{children}</Text>
         </Link>
     );
 };
