@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView} from 'react-native';
 import { Link } from 'react-router-native';
 import Text from './Text';
 import Constants from 'expo-constants';
