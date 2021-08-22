@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
+import theme from '../themes';
 
 const styles = StyleSheet.create({
     text: {
+        ...theme.text,
         fontSize: 16,
         fontWeight: "bold",
         padding: 5

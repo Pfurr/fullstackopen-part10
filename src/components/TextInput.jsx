@@ -9,16 +9,18 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 20,
         fontSize: 16,
-        fontWeight: "bold",
+        fontWeight: "bold"
     },
     error: {
         borderColor: theme.colors.error
-    }
+    },
+    text: theme.text
 });
 
 const TextInput = ({ style, error, ...props }) => {
     const textInputStyle = [
         styles.input,
+        styles.text,
         error && styles.error,
         style
     ];
