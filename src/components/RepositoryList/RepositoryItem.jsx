@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Image, View} from 'react-native';
+
 import Text from '../Text';
 import theme from "../../themes";
+import processCount from '../../utils/processCount';
 
 const styles = StyleSheet.create({
     avatar: {
@@ -39,15 +41,9 @@ const styles = StyleSheet.create({
     }
 });
 
-const processCount = (number) => {
-    if (number < 1000) return number;
-
-    return `${(number / 1000).toFixed(1)}k`;
-};
-
-const RepoStat = ({stat, label}) => {
+const RepoStat = ({ stat, label }) => {
     return (
-        <View style={styles.column}>
+        <View style={styles.column} testID={`repoStat-${label}`}>
             <Text style={styles.centered}>{processCount(stat)}</Text>
             <Text style={[styles.meta, styles.centered]}>{label}</Text>
         </View>
@@ -56,7 +52,7 @@ const RepoStat = ({stat, label}) => {
 
 const RepositoryItem = ({ item }) => {
     return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="repoItem">
         <View style={styles.row}>
             <Image 
                 style={styles.avatar}
