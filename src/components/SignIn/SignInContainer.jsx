@@ -12,13 +12,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
     },
-    button: {
-        backgroundColor: theme.colors.primary,
-        color: "white",
-        textAlign: "center",
-        borderRadius: 5,
-        padding: 20
-    }
+    button: theme.button
 });
 
 const initialValues = {
