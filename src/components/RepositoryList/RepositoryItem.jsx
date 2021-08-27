@@ -7,30 +7,24 @@ import processCount from '../../utils/processCount';
 
 const styles = StyleSheet.create({
     avatar: {
-        width: 66,
-        height: 58,
+        height: 65,
+        width: 65,
         margin: 10
     },
     container: {
-        display: "flex"
+        display: "flex",
+        backgroundColor: "white"
     },
     row: {
         flexDirection: "row",
     },
-    column: {
-        flexDirection: "column",
-        justifyContent: "space-evenly"
-    },
-    meta: {
-        color: "gray",
-        fontWeight: "normal",
-    },
+    meta: theme.meta,
     badge: {
         backgroundColor: theme.colors.primary,
         color: "white",
         borderRadius: 8,
         padding: 10,
-        width: 100,
+        width: 120,
         textAlign: "center"
     },
     centered: {
@@ -38,7 +32,11 @@ const styles = StyleSheet.create({
     },
     repoStats: {
         justifyContent: "space-evenly"
-    }
+    },
+    contentContainer: {
+        flexGrow: 1,
+        flexShrink: 1,
+    },
 });
 
 const RepoStat = ({ stat, label }) => {
@@ -58,9 +56,9 @@ const RepositoryItem = ({ item }) => {
                 style={styles.avatar}
                 source={{uri: item.ownerAvatarUrl}}
             />
-            <View style={styles.column}>
+            <View style={styles.contentContainer}>
                 <Text>{item.fullName}</Text>
-                <Text style={styles.meta}>Description: {item.description}</Text>
+                <Text style={styles.meta}>{item.description}</Text>
                 <Text style={styles.badge}>{item.language}</Text>
             </View>
         </View>

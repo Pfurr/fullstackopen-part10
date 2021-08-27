@@ -12,8 +12,12 @@ const theme = {
     fontFamily: Platform.select({
       ios: 'Arial',
       android: 'Roboto',
-      default: 'System'
-    })
+      default: 'System',
+    }),
+  },
+  meta: {
+    color: "gray",
+    fontWeight: "normal",
   },
   button: {
     backgroundColor: colorPrimary,
