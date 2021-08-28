@@ -54,6 +54,7 @@ const AppBar = () => {
                 {authorizedUser && <AppBarTab to="/create-review">Create a review</AppBarTab>}
                 {!authorizedUser && <AppBarTab to="/sign-in">Sign In</AppBarTab>}
                 {authorizedUser && <AppBarTab onPress={signOut}>Sign Out</AppBarTab>}
+                {!authorizedUser && <AppBarTab to="/sign-up">Sign up</AppBarTab>}
             </ScrollView>
         </View>
     );
