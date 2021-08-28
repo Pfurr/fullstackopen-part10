@@ -4,15 +4,17 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 
-import FormikTextInput from './FormikTextInput';
+import FormikTextInput from '../FormikTextInput';
 import Text from '../Text';
 import theme from '../../themes';
 
 const styles = StyleSheet.create({
     container: {
         padding: 20,
+        backgroundColor: "white"
     },
-    button: theme.button
+    button: theme.button,
+    buttonText: theme.buttonText
 });
 
 const initialValues = {
@@ -49,8 +51,8 @@ const SignInContainer = ({ onSubmit }) => {
                     secureTextEntry={true}
                     testID="password"
                 />
-                <Pressable onPress={handleSubmit} testID="submitButton">
-                    <Text style={styles.button}>Sign in</Text>
+                <Pressable onPress={handleSubmit} testID="submitButton" style={styles.button}>
+                    <Text style={styles.buttonText}>Sign in</Text>
                 </Pressable>
             </View>
             }

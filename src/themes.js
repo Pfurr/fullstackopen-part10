@@ -24,7 +24,10 @@ const theme = {
     textAlign: "center",
     borderRadius: 5,
     padding: 20
-}
+  },
+  buttonText: {
+    color: "white"
+  }
 };
 
 export default theme;
