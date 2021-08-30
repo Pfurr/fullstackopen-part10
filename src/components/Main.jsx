@@ -8,12 +8,13 @@ import SignIn from './SignIn';
 import RepositoryView from './RepositoryList/RepositoryView';
 import ReviewForm from './ReviewForm';
 import SignUpForm from './SignUpForm';
+import theme from '../themes';
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     flexShrink: 1,
-    backgroundColor: "#CDCDCD"
+    backgroundColor: theme.colors.background
   },
 });
 

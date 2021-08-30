@@ -6,7 +6,8 @@ const theme = {
   colors: {
     primary: colorPrimary,
     appBar: "#2F90BF",
-    error: "#d73a4a"
+    error: "#d73a4a",
+    background: "#CDCDCD"
   },
   text: {
     fontFamily: Platform.select({
