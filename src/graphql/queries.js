@@ -3,8 +3,8 @@ import { REPO_DETAILS, USER_DETAILS } from './fragments';
 
 export const GET_REPOSITORIES = gql`
   ${REPO_DETAILS}
-  query ($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection){
-    repositories(orderBy: $orderBy, orderDirection: $orderDirection) {
+  query ($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String){
+    repositories(orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
       edges {
         node {
           ...RepoDetails
