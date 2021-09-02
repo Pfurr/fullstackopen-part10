@@ -13,12 +13,11 @@ const useRepository = (id) => {
     if (!canFetchMore){
       return;
     }
-    console.log("fetching more reviews");
     fetchMore({
       variables: {
         id,
         after: data.repository.reviews.pageInfo.endCursor,
-        first: 4 
+        first: 3
       }
     });
   };

@@ -21,3 +21,17 @@ export const USER_DETAILS = gql`
   }
 `;
 
+export const REVIEW_DETAILS = gql`
+  ${USER_DETAILS}
+  fragment ReviewDetails on Review {
+    id
+    text
+    rating
+    createdAt
+    user {
+      ...UserDetails
+    }
+    repositoryId
+  }
+`;
+

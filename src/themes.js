@@ -22,12 +22,12 @@ const theme = {
   },
   button: {
     backgroundColor: colorPrimary,
-    textAlign: "center",
     borderRadius: 5,
     padding: 20
   },
   buttonText: {
-    color: "white"
+    color: "white",
+    textAlign: "center"
   }
 };
 

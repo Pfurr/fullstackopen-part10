@@ -8,6 +8,7 @@ import SignIn from './SignIn';
 import RepositoryView from './RepositoryList/RepositoryView';
 import ReviewForm from './ReviewForm';
 import SignUpForm from './SignUpForm';
+import ReviewsView from './ReviewsView';
 import theme from '../themes';
 
 const styles = StyleSheet.create({
@@ -23,6 +24,9 @@ const Main = () => {
         <View style={styles.container}>
             <AppBar></AppBar>
             <Switch>
+                <Route path="/my-reviews">
+                  <ReviewsView></ReviewsView>
+                </Route>
                 <Route path="/sign-up">
                   <SignUpForm/>
                 </Route>

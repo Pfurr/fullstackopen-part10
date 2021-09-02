@@ -2,9 +2,32 @@ import { useQuery } from "@apollo/client";
 
 import { AUTHORIZED_USER } from "../graphql/queries";
 
-const useAuthorizedUser = () => {
-  const { data, loading } = useQuery(AUTHORIZED_USER);
-  return { authorizedUser: data?.authorizedUser, loading };
+const useAuthorizedUser = (includeReviews=false) => {
+  let variables = {};
+  if (includeReviews) {
+    variables = {
+      includeReviews,
+      first: 3
+    };
+  }
+  const { data, loading, fetchMore, refetch } = useQuery(AUTHORIZED_USER, {
+    variables
+  });
+
+  const handleFetchMore = () => {
+    const canFetchMore = !loading && data?.authorizedUser.reviews.pageInfo.hasNextPage;
+    if (!canFetchMore) {
+      return;
+    }
+    return fetchMore({
+      variables: {
+        ...variables,
+        after: data.authorizedUser.reviews.pageInfo.endCursor,
+      }
+    });
+  };
+
+  return { authorizedUser: data?.authorizedUser, loading, fetchMore: handleFetchMore, refetch };
 };
 
 export default useAuthorizedUser;
